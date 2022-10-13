@@ -5,7 +5,7 @@ import {AntDesign} from '@expo/vector-icons';
 export default function WelcomeScreen() {
   return (
     <>
-    <ImageBackground style={styles.background} source={{uri:"https://wallpaperaccess.com/full/1099071.jpg"}}>
+    <ImageBackground blurRadius={1} style={styles.background} source={{uri:"https://wallpaperaccess.com/full/1099071.jpg"}}>
      <View style={styles.logoHouse}>
       <Image style={styles.logo}source={{uri:"https://seeklogo.com/images/M/miami-beach-logo-C677AF8447-seeklogo.com.png"}}/>
     
