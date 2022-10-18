@@ -13,22 +13,11 @@ const Moshscreen = () => {
 };
 fn(); 
  },[]);
- const selectImage =async () => {
-  try {
-    const results = await ImagePicker.launchImageLibraryAsync();
-    if (!results.cancelled)
-      setImageUri(results.uri);
-  } catch (error) {
-    console.log("error readin image", error);
-  }
- }
+
 
   return (
     <View>
-      
-      <Button title="select image" onPress={selectImage}/>
-      <Image source={{uri: imageUri}} style={{ width:200, height: 200}}  />
-      <Fire />
+      <Fire imageUri={imageUri} onChangeImage={ (uri)=> setImageUri(uri)}/>
     </View>
   )
 }
