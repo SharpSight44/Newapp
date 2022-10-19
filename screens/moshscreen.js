@@ -16,9 +16,9 @@ fn();
 
 
   return (
-    <View style={{backgroundColor:'#b6e6a5', height:'100%', alignItems:'center', justifyContent:'center'}}>
+    <View style={{backgroundColor:'#bedeba', height:'100%', alignItems:'center', justifyContent:'center'}}>
       <Fire imageUri={imageUri} onChangeImage={ (uri)=> setImageUri(uri)}/>
-      <Text style={{color:'#820443', marginTop:20}}> Yes Yes Guess Who's on third</Text>
+      <Text style={{color:'#820443', marginTop:20}}> Pick your Best Pic</Text>
     </View>
   )
 }
