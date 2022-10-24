@@ -23,9 +23,9 @@ const handleRemove = uri => {
 };
 
   return (
-    <View style={{backgroundColor:'#bedeba', height:'100%', alignItems:'center', justifyContent:'center'}}>
-      <ImageInputlist imageUris={imageUris} onAddImage={handleAdd} onRemoveImage={handleRemove}/>
-      <Text style={{color:'#820443', marginTop:20}}> Pick your Best Pic</Text>
+    <View style={{backgroundColor:'#50a2a3',  alignItems:'center', justifyContent:'center', height:'100%'}}>
+      <Text style={{color:'#f57ad4', marginTop:20, marginBottom:15, fontSize: 25, fontWeight: 'bold'}}> Pick your Best Pic</Text>
+      <ImageInputlist imageUris={imageUris} onAddImage={handleAdd} onRemoveImage={handleRemove} />
     </View>
   )
 }

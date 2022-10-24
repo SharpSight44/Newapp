@@ -24,7 +24,7 @@ function Fire({imageUri, onChangeImage}) {
   return (
     <TouchableWithoutFeedback onPress={handlePress}>
     <View style={styles.rises}>
-   {!imageUri &&  (<AntDesign name="camerao" size={53} color="#820443" />) }
+   {!imageUri &&  (<AntDesign name="camerao" size={53} color="#f7e4ef" />) }
    {imageUri && <Image style={styles.image} source={{ uri: imageUri }} />}
      
     </View>
@@ -37,8 +37,11 @@ function Fire({imageUri, onChangeImage}) {
 const styles = StyleSheet.create({
   rises:{
     alignItems: 'center',
-    backgroundColor: '#f5aed1',
+    backgroundColor: '#f5a9d4',
     borderRadius: 15,
+    borderWidth: 2,
+    borderStyle: 'solid',
+    borderColor:'#056b73',
     height: 100,
     justifyContent: 'center',
     width: 100,
