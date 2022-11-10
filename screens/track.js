@@ -1,6 +1,7 @@
-import { StyleSheet, Text, TouchableOpacity, View } from 'react-native'
+import { StyleSheet, Text, TextInput, TouchableOpacity, View } from 'react-native'
 // import React, { useEffect, useState } from 'react'
 import { AntDesign } from '@expo/vector-icons';
+import {BlurView} from 'expo';
 import { useState } from 'react';
 
 const MainPage = () => {
@@ -17,7 +18,7 @@ const MainPage = () => {
  },[items]);
 
 const handleAddNew = () =>{
-return setAdd(true);
+return setAdd(!add);
 
 };
 
@@ -34,8 +35,28 @@ return setAdd(true);
 </View>
     <View style={{backgroundColor:'#30d1e3', height:'75%',  alignItems:'center', zIndex:-2}}>
      { add == true ? (
-     <View style={{width:300, height:400, backgroundColor:"yellow"}}> 
-     </View> ): (
+     <>
+     
+
+        <View   style={{width:"100%", height:"100%", filter: "blur(100%)", backgroundColor:"rgba(245,245,245,.9)",  alignItems:'center'}}>
+     
+    
+     <View style={{width:350, height:450, backgroundColor:"rgba(255, 255, 255,.9)", borderRadius:15, marginTop:20}}> 
+     <TextInput placeholder='Add here' >
+
+     </TextInput>
+     <TouchableOpacity>
+      <View style={{alignSelf:"center", width:75, height:30, backgroundColor:"green", borderRadius:15}}>
+        <Text style={{color:"white", fontSize:15, textAlign:"center", paddingTop:3}}>
+          Save 
+        </Text>
+
+      </View>
+     </TouchableOpacity>
+    </View>
+    </View> 
+    </>
+     ): (
      <View style={{zIndex:-1, backgroundColor:'rgba(201, 250, 255,.6)', height:'100%', width:'100%'}}>
    {items.map((x,i)=> (
    <View key={i} style={ x?.urgent == true ? (styles.urgent):(styles.menu)} >
