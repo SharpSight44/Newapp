@@ -10,7 +10,7 @@ const MainPage = () => {
 
  useState(()=>{
 
-  const updated = [{text:"this is all the Text", date:"last visited 11/9/2022", urgent:false}, 
+  const updated = [{text:"this is all the Text", date:"last visited 11/11/2022", urgent:false}, 
   {text:"Alot of text here", date:"last visited 11/1/2022", urgent:false}, 
   {text:"You Got THIS!!", date:"last visited 11/17/2022", urgent: true}]
   return setItems(updated);
