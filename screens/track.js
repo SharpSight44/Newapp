@@ -7,7 +7,8 @@ import { useState } from 'react';
 const MainPage = () => {
  const [items, setItems] = useState([]);
  const [add, setAdd] =useState(false);
-
+ const [text, setText] =useState(" ");
+ const [ifUrgent, setifUrgent] = useState(false);
  useState(()=>{
 
   const updated = [{text:"this is all the Text", date:"last visited 11/11/2022", urgent:false}, 
@@ -15,13 +16,28 @@ const MainPage = () => {
   {text:"You Got THIS!!", date:"last visited 11/17/2022", urgent: true}]
   return setItems(updated);
 
+ },[]);
+
+ useState(()=>{
+  return setAdd(false);
+
  },[items]);
 
 const handleAddNew = () =>{
 return setAdd(!add);
 
 };
+const handleSaveNew = () =>{
+ const newly = {text:"hello", date:"Just Added", urgent:true};
 
+  return setItems(newly), setText(" ");
+  
+  };
+
+  const handleUrgent = () =>{
+    return setifUrgent(true);
+    
+    };
   return (
     <>
      <View style={{ width:'100%',height:'10%', backgroundColor:'#c3fad3'}}> 
@@ -42,17 +58,27 @@ return setAdd(!add);
      
     
      <View style={{width:350, height:450, backgroundColor:"rgba(255, 255, 255,.9)", borderRadius:15, marginTop:20}}> 
-     <TextInput placeholder='Add here' >
+     <TextInput onChangeText={setText} value={text} multiline  >
 
      </TextInput>
-     <TouchableOpacity>
+     <TouchableOpacity onPress={handleUrgent} style={{marginTop:245, paddingLeft:10}} >
+      <View style={{ width:50, height:20, backgroundColor:"red", borderRadius:15, paddingLeft:1}}>
+        <Text style={{color:"white", fontSize:12, textAlign:"center", paddingTop:3}}>
+         Urgent
+        </Text>
+
+      </View>
+      </TouchableOpacity>
+     
+     <TouchableOpacity onPress={handleSaveNew}  >
       <View style={{alignSelf:"center", width:75, height:30, backgroundColor:"green", borderRadius:15}}>
         <Text style={{color:"white", fontSize:15, textAlign:"center", paddingTop:3}}>
           Save 
         </Text>
 
       </View>
-     </TouchableOpacity>
+      </TouchableOpacity>
+      
     </View>
     </View> 
     </>
